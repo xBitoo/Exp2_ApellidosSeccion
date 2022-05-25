@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="Estilos/css/my-style.css" rel="stylesheet">
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <link rel="icon" href="icon/favicon2.ng">
+    <script src="jquery.Rut.js" type="text/javascript"></script>
+	<title>PetCare</title>
+
+  
+    <script>
+      
+        $(function(){
+          $("#formulario").validate({
+           rules: {
+            
+             email: {
+                 required: true,
+                 email: true
+             },
+             rut: "required",
+                 
+             telefono: "required", 
+             
+             apellidos:"required",
+             password: "required",
+          
+            password2: {
+            required:true,
+            equalTo:"#password"
+          },
+             
+             nombre: "required"
+             
+           },
+           messages: {
+             email: {
+               required:'ingresa tu correo electronico',
+               email: 'Formato de correo no valido'
+             },
+            
+             rut: {
+               required:'ingresa tu rut',
+               minlength:'ingresa tu rut sin puntos y con guion',
+               maxlength:'excede cantidad de caracteres'
+               
+             },
+             telefono: {
+               required:'ingresa tu numero telefonico',
+               minlength:'formato de numero no valido'         
+             },
+             apellidos: {
+               required:'ingresa tu apellido'               
+             },
+             nombre: {
+               required:'ingresa tu nombre'             
+             },
+             password:{
+            required:'ingrese una contraseña',
+            minlength: 'cantidad de digitos insuficientes'
+          },
+          password2:{
+            required:'reingrese la contraseña',
+            equalTo:'las contraseñas ingresadas no coinciden',
+            minlength:'caracteres insuficientes'
+          }     
+             
+           }
+          });
+        })
+       </script>
+</head>
+<body>
+	<div>
+		<nav class="navbar navbar-expand-lg navbar-light bg-verdeagua fixed-top">
+		  <a class="navbar-brand" href="#">
+		  	<img src="imgs/logo1.png" width="100" height="100">
+		  </a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active">
+		        <a class="nav-link" data-animation="center" href="PaginaInicio.html">Inicio</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="Somos.html">Quienes somos</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="galeria.html">Catalogo</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="Formulario.html">Contacto</a>
+		      </li>
+              <li class="nav-item">
+		        <a class="nav-link" href="InicioSESION.html">Ingresar</a>
+		      </li>
+		    </ul>	    
+		  </div>
+		  <a class="navbar-brand ml-5 img-thumbnail" href="#">
+			<img src="imgs/fundacion.jpg" width="200" height="100">
+		</a>
+		</nav>
+	</div>
+
+    <div class="container mt-5 pt-5 mb-3">
+        
+        <div class="card-header mt-5 text-center letras">Crear Sesión</div>
+            <form method="post" action="procesar.php" id="formulario">
+                <div class="form-group"> 
+                    <br>
+                    <br>
+                    <label for="nombres">Nombres:</label>
+                    <input type="text" class="form-control" id="nombres" name="nombre" required placeholder="Juan perez" pattern="[a-zA-Z]{48}" title="Ingrese un nombre valido">
+                </div> 
+
+                    <div class="form-group"> 
+                    <label for="apellido">Apellidos:</label>
+                    <input type="text" class="form-control" id="apellido" name="apellidos" required placeholder="Ingrese sus apellidos" pattern="[a-zA-Z]{48}">
+                    </div>
+
+
+                <br>
+            <br>
+            <div class="form-group">
+                <label>Contraseña:</label>
+                <input class="form-control" type="password" id="password" name="password" minlength="6">
+            </div >
+            <div class="form-group">
+                <label>Reingresa contraseña: </label>
+                <input class="form-control" type="password" name="password2" minlength="6">
+              </div>
+            <br>
+            <br>
+                <div class="form-group"> 
+                    <label for="rutPasaporte">Rut o Pasaporte:</label>
+                    <input name="rut" type="Text" class="form-control" id="rut" minlength="9" maxlength="10" required placeholder="19818986-3">
+                </div> 
+
+                <div class="form-group"> 
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" name="telefono" class="form-control" id="telefono" minlength="9" maxlength="9" required placeholder="957160697">
+                </div> 
+
+                <div class="form-group">          
+                    <label for="control1">Seleccione Ciudad de Residencia</label> 
+                    <select class="form-control" id="control1" name="control1"> 
+                        <option>Santiago</option> 
+                        <option>Temuco</option>
+                        <option>Valparaiso</option> 
+                        <option>La Serena</option> 
+                        <option>Licanray</option> 
+                    </select> 
+                </div>
+
+                <div class="form-group">
+                    <label>Correo Electrónico: </label>
+                    <input type="text" name="email" required placeholder="nombre@dominio.cl" class="form-control" id="email">
+                </div>
+
+                
+
+                <button type="submit" class="btn btn-primary" id="enviar" value="Enviar">Enviar</button>   <button type="reset" class="btn btn-secondary">Limpiar</button> 
+
+            </form>
+        
+    </div>
+
+	<footer class="bg-verdeagua">
+        <div class="container pt-5">
+            <div class="row justify-content-center">
+                <div class="col-sm-4 col-md-3 item">
+                    <ul>
+                        <li class="mb-2"><a href="#" class="nav-link"><ion-icon name="paw-outline"></ion-icon>Inicio</a></li>
+                        <li class="mb-2"><a href="#" class="nav-link"><ion-icon name="paw-outline"></ion-icon>Galeria</a></li>
+                        <li class="mb-2"><a href="#" class="nav-link"><ion-icon name="paw-outline"></ion-icon>Prueba suerte</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 item">
+                    <h5 class="ml-5 text-primary">Sobre nosotros</h5>
+                    <ul>
+                        <p class="texto-footer">Empresa sin fines de lucro dedicada a la venta de accesorios, para ir en ayuda de animales en riesgo, con instalaciones en todo santiago centro.</p>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3 item">
+                	<div class="card-group">
+					  <div class="card">
+					    <a href="#" class="zoom"><img src="https://s3.amazonaws.com/businessinsider.mx/wp-content/uploads/2021/02/12171410/business-insider-mexico-gato-unsplash-1-1024x1024.jpg" class="card-img-top" alt="..."></a>
+					  </div>
+					  <div class="card">
+					    <a href="#" class="zoom"><img src="https://www.digitalizados.com.co/wp-content/uploads/2021/08/ae20c6d672fe3d798a3fd357c2c795d8-1024x1024.jpeg" class="card-img-top" alt="...">
+					  </div></a>
+					  <div class="card">
+					    <a href="#" class="zoom"><img src="https://piensosplus.es/wp-content/uploads/2020/03/covid19-mascotas-1024x1024.jpg" class="card-img-top" alt="..."></a>
+					  </div>
+					</div>
+					<div class="card-group mt-2">
+					  <div class="card">
+					    <a href="#" class="zoom"><img src="https://www.doogweb.es/wp-content/uploads/2021/07/Perro-Pipper.jpg" class="card-img-top" alt="Perro3"></a>
+					  </div>
+					  <div class="card">
+					    <a href="#" class="zoom"><img src="https://www.crematoriopetsinheaven.com/wp-content/uploads/2021/10/El-cerdo-vietnamita-como-mascota-1024x1024.jpg" class="card-img-top" alt="Cerdo"></a>
+					  </div>
+					  <div class="card">
+					    <a href="#" class="zoom"><img src="imgs/oveja.jpg" class="card-img-top" alt="mascota"></a>
+					  </div>
+					</div>
+                </div>
+                <div class="col-lg-3 item social">
+                	<a href="https://es-la.facebook.com/" target="_blank"><ion-icon name="logo-facebook" size="large"></ion-icon></a>
+                	<a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZXMifQ%3D%3D%22%7D" target="_blank" class="ml-2"><ion-icon name="logo-twitter" size="large"></ion-icon></a>
+                	<a href="https://www.instagram.com/accounts/login/" target="_blank" class="ml-2"><ion-icon name="logo-instagram" size="large"></ion-icon></a>
+                    <p class="copyright">PetCare © 2022</p>
+					<p class="copyright">Integrantes: Yerko Gálvez, Fabian Ramirez, Rodrigo Concha.</p>
+					<p class="copyright">Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

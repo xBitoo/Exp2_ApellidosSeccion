@@ -1,0 +1,221 @@
+
+
+
+.bg-verdeagua{
+	background-color: #e3f2fd;
+	
+}
+
+
+.body.dark{
+	background: #000000;
+}
+
+.texto-footer{
+	font-size: 12;
+}
+
+ul{
+	list-style: none;
+}
+.zoom {
+	overflow:hidden;
+}
+
+
+.zoom:hover{
+	transform:	scale(1.02);
+}
+
+.centrar-2{display: block; padding-left: 200px;}
+.centrar-1{display: block; padding-left: 250px;}
+.centrar{display: block; padding-left: 300px;}
+.centrar1{display: block; padding-left: 350px;}
+.centrar2{display: block; padding-left: 400px;}
+
+._marco_img {
+	padding: 0.25rem;
+	background-color: #fff;
+	border: 1px solid #dee2e6;
+	border-radius: 0.25rem;
+	max-width: 100%;
+	height: auto;
+  }
+.margi{
+	margin-left: 15%;
+	margin-top: 15%;
+	margin-bottom: 15%;
+}
+
+.padi{
+	padding-left: 30px;
+	margin-left: 15px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.letras{
+	font-size: x-large;
+	font-family: 'Times New Roman', Times, serif;
+	color: forestgreen;
+}
+.padileft{
+	padding-left: 20%;
+}
+
+
+.error-control {
+	border: 1px solid red;
+}
+
+label.error {
+	color: red;
+	width: 300px;
+	font-size: 0.8em;
+	margin-top: -5px;
+	margin-bottom: 10px;
+}
+
+.mlpene{
+	margin-left: 25%;
+}
+
+.APIfont{
+	font-size: 1em;
+}
+
+.marginRight{
+	padding-right:10px;
+}
+
+.marginLeft{
+	padding-left:20px;
+}
+
+.toggle {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+    height: 60px;
+    border-radius: 50px;
+    transition: .2s;
+}
+
+.toggle i {
+    width: 50%;
+    line-height: 60px;
+    text-align: center;
+    font-size: 30px;
+    z-index: 1;
+}
+
+.toggle .ball {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    margin: 7.5px;
+    border-radius: 50%;
+    transition: .3s ease-out;
+}
+
+input {
+    display: none;
+}
+
+/*
+    -- Light Mode --
+*/
+
+.light {
+    background: #fafafa;
+}
+
+.light .toggle {
+    background: linear-gradient(145deg, #e1e1e1, #fff);
+    box-shadow: 3px 3px 4px #e6e6e6,
+                -3px -3px 4px #ffffff;
+}
+
+.light .toggle .bxs-sun {
+    color: #fafafa;
+}
+
+.light .toggle .bx-moon {
+    color: #151d2a;
+}
+
+.light .toggle .ball {
+    background: #151d2a;
+}
+
+/*
+    -- Dark Mode --
+*/
+
+.dark {
+    background: #151d2a;
+}
+
+.dark .toggle {
+    background: #151d2a;
+    box-shadow: 3px 3px 3px #0e131b,
+                -3px -3px 3px #1c2739;
+}
+
+.dark .toggle .bx-sun {
+    color: #fafafa;
+}
+
+.dark .toggle .bxs-moon {
+    color: #151d2a;
+}
+
+.dark .toggle .ball {
+    background: #fafafa;
+    transform: translateX(60px);
+}
+
+.warp{
+	width: 90%;
+	max-width: 1000px;
+	/*margin:auto;*/
+}
+.widget{
+	width: 40%;
+	margin: 2em;
+	/*margin:32px;*/
+}
+.widget p{
+	display: inline-block;
+	line-height: 1em;
+
+}
+.fecha{
+	font-family: Oswald,Arial;
+	text-align: center;
+	font-size:1.5em;
+	margin-bottom: 0.3125rem;
+	/*margin-bottom: 5px;*/
+	background: rgba(0,0,0,.5);
+	padding:20px;
+	width: 100%;
+}
+.reloj{
+	font-family: Oswald,Arial;
+	width: 100%;
+	padding: 20px;
+	font-size:4em;
+	text-align: center;
+	background: rgba(0,0,0,.5);
+}
+.reloj .caja-segundos {
+	display: inline-block;
+
+}
+
+.reloj .segundos,
+.reloj .ampm{
+	font-size: 2rem;
+	display: block;
+}
